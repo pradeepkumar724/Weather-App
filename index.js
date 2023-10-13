@@ -25,7 +25,7 @@ const displayData = (data) => {
 
   city.textContent = name;
   tempareture.textContent = Math.round(main.temp);
-  temparetureSmall.textContent = Math.round(main.temp);
+  temparetureSmall.textContent = Math.round(main.temp) + "C";
   humidity.textContent = main.humidity + "%";
 
   windEle.textContent = Math.round(wind.speed) + "Kmph";
