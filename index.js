@@ -14,7 +14,7 @@ let city = document.getElementById("city");
 
 let newDate = new Date();
 let fullMonth = newDate.toLocaleString("default", { month: "long" });
-let day = newDate.getDay();
+let day = newDate.getDate();
 date.textContent = `${fullMonth} ${day}`;
 
 const displayData = (data) => {
