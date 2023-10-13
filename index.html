@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Weather App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script> -->
+
+    <script
+      src="https://kit.fontawesome.com/56950aefc3.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="index.css" />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              navyBlue: "#182140",
+              lightPink: "#9138a9",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body
+    class="bg-gradient-to-br from-navyBlue to-lightPink text-white font-medium min-h-screen md:flex items-center"
+  >
+    <div class="max-w-[450px] md:max-w-none md:w-[768px] mx-auto">
+      <header class="flex relative items-center flex-col mb-4 pt-10 md:mb-8">
+        <nav>
+          <form
+            class="bg-white rounded-full overflow-hidden py-1 px-1 md:w-[350px] flex justify-between items-center"
+          >
+            <input
+              type="text"
+              placeholder="Search Location"
+              class="px-3 py-1 rounded outline-none border-0 text-black font-normal"
+              id="useInput"
+            />
+            <button class="bg-navyBlue w-8 h-8 rounded-full" id="button">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+          </form>
+          <p class="text-yellow-300 pt-2 ml-3 hidden" id="error">
+            Please Enter Valid Location
+          </p>
+        </nav>
+        <div
+          class="w-5 h-5 rounded-full animate-spin border-t-2 border-r-2 border-b-2 mt-4 hidden absolute bottom-[-30px]"
+          id="loading"
+        ></div>
+      </header>
+      <div class="flex flex-col md:flex-row md:justify-between md:items-center">
+        <section class="flex items-center flex-col mb-10 flex-1">
+          <img
+            src="./images/sunBehindCloud.png"
+            alt="sun with cloud"
+            class="w-48 mb-[-15px]"
+            id="weatherImage"
+          />
+          <h2 class="text-4xl font-semibold mb-2">
+            <span id="tempareture">--</span><sup>o</sup>C
+          </h2>
+          <h1 class="text-4xl mb-2 font-bold text-pink-200" id="city">
+            Location
+          </h1>
+          <p>Precipitations</p>
+          <p>
+            Max: <spna id="max">--</spna>°C &nbsp Min:<span id="min">--</span>°C
+          </p>
+        </section>
+
+        <div class="flex-1">
+          <section class="flex justify-center">
+            <img alt="house" src="./images/House.png" class="w-48" />
+          </section>
+          <footer
+            class="bg-gradient-to-br from-lightPink to-navyBlue rounded-t-3xl rounded-br-3xl mx-1 rounded-bl-3xl pb-5 overflow-hidde shadow-2xl"
+          >
+            <div
+              class="flex justify-between border-b-[1.5px] border-current px-10 py-3"
+            >
+              <p>Today</p>
+              <p id="date">July, 21</p>
+            </div>
+            <div class="flex justify-between px-10 pt-5">
+              <div class="h-28 flex flex-col items-center justify-around">
+                <p>Temp</p>
+                <img alt="sun" src="./images/temp.png" class="w-12" />
+                <p><span id="temparetureSmall">--</span><sup>o</sup>C</p>
+              </div>
+              <div class="h-28 flex flex-col items-center justify-around">
+                <p>Wind</p>
+                <img alt="sun" class="w-8" src="./images/wind.png" />
+                <p id="windEle">--Kmph</p>
+              </div>
+              <div class="h-28 flex flex-col items-center justify-around">
+                <p>Huty</p>
+                <img alt="sun" class="w-8" src="./images/humidity.png" />
+                <p id="humidity">--%</p>
+              </div>
+              <!-- <div class="h-28 flex flex-col items-center justify-around">
+                    <p>19<sup>o</sup></p>
+                    <img alt="sun" src="./images/Moon-cloud-mid-rain.png" class="w-14"/>
+                    <p>15.00</p>
+                </div> -->
+            </div>
+          </footer>
+        </div>
+      </div>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
