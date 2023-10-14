@@ -35,21 +35,27 @@ const displayData = (data) => {
   switch (weather[0].main) {
     case "Clouds":
       return (weatherImage.src = "images/clouds.png");
+      break;
     case "Clear":
       return (weatherImage.src = "images/clear.png");
+      break;
     case "Rain":
       return (weatherImage.src = "images/rain.png");
+      break;
     case "Drizzle":
       return (weatherImage.src = "images/drizzle.png");
+      break;
     case "Mist":
       return (weatherImage.src = "images/mist.png");
+      break;
+    default:
+      return (weatherImage.src = "images/clouds.png");
   }
 };
 
 let gettingData = (event) => {
   event.preventDefault();
   let userInputValue = userInput.value;
-
   loading.classList.remove("hidden");
 
   let doNetworkCall = async () => {
